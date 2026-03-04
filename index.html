@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Nhà hàng Hachi 🍓🌸 | Commission Art</title>
+  <style>
+    :root {
+      --pink-soft: #ffebee;
+      --pink-light: #fff0f5;
+      --pink-medium: #ffc1cc;
+      --pink-dark: #ff99ac;
+      --strawberry: #ff6b81;
+      --text-dark: #4a2c3d;
+      --text-light: #6b4a5a;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: var(--pink-light) url('https://www.fabmood.com/wp-content/uploads/2026/03/Cute-Pink-Strawberry-Desktop-Wallpaper-Kawaii-Aesthetic-Laptop-Background.jpg') repeat;
+      background-size: 300px 300px; /* seamless polka/strawberry pattern */
+      color: var(--text-dark);
+      line-height: 1.6;
+      min-height: 100vh;
+      padding: 20px;
+    }
+
+    .overlay {
+      background: rgba(255, 240, 245, 0.75); /* hồng nhạt overlay để chữ dễ đọc */
+      min-height: 100vh;
+      border-radius: 20px;
+      max-width: 920px;
+      margin: 0 auto;
+      padding: 30px;
+      box-shadow: 0 10px 40px rgba(255, 105, 180, 0.25);
+    }
+
+    header {
+      text-align: center;
+      padding: 50px 20px 30px;
+      background: linear-gradient(to bottom, rgba(255,182,193,0.4), rgba(255,240,245,0.6));
+      border-radius: 30px;
+      margin-bottom: 40px;
+    }
+
+    h1 {
+      font-size: 3.5rem;
+      color: var(--pink-dark);
+      text-shadow: 3px 3px 6px rgba(255,105,180,0.4);
+      margin-bottom: 15px;
+      font-weight: 800;
+    }
+
+    .subtitle {
+      font-size: 1.4rem;
+      color: var(--strawberry);
+      margin-bottom: 20px;
+    }
+
+    h2 {
+      color: var(--pink-dark);
+      font-size: 2.3rem;
+      margin: 50px 0 25px;
+      text-align: center;
+      position: relative;
+    }
+
+    h2::after {
+      content: "🍓✨";
+      font-size: 1.5rem;
+      margin-left: 10px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 30px 0;
+      background: rgba(255,255,255,0.85);
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 8px 25px rgba(255,105,180,0.2);
+    }
+
+    th, td {
+      padding: 18px 15px;
+      text-align: center;
+      border-bottom: 1px solid #ffd1dc;
+    }
+
+    th {
+      background: var(--pink-medium);
+      color: white;
+      font-weight: bold;
+    }
+
+    tr:nth-child(even) {
+      background: rgba(255,240,245,0.6);
+    }
+
+    .section {
+      background: rgba(255,255,255,0.9);
+      padding: 35px;
+      border-radius: 25px;
+      margin-bottom: 40px;
+      box-shadow: 0 10px 30px rgba(255,105,180,0.15);
+      border: 2px dashed var(--pink-medium);
+    }
+
+    ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    ul li {
+      margin: 15px 0;
+      padding-left: 35px;
+      position: relative;
+      font-size: 1.1rem;
+    }
+
+    ul li::before {
+      content: "🍓";
+      position: absolute;
+      left: 0;
+      font-size: 1.4rem;
+    }
+
+    .highlight {
+      color: var(--strawberry);
+      font-weight: bold;
+      background: rgba(255,182,193,0.3);
+      padding: 3px 8px;
+      border-radius: 8px;
+    }
+
+    .contact {
+      text-align: center;
+      background: var(--pink-medium);
+      color: white;
+      padding: 50px 30px;
+      border-radius: 30px;
+      margin-top: 60px;
+      font-size: 1.5rem;
+      box-shadow: 0 15px 40px rgba(255,105,180,0.3);
+    }
+
+    a {
+      color: white;
+      font-weight: bold;
+      text-decoration: underline;
+    }
+
+    a:hover {
+      color: #fff;
+      opacity: 0.9;
+    }
+
+    @media (max-width: 600px) {
+      h1 { font-size: 2.8rem; }
+      h2 { font-size: 1.9rem; }
+      .overlay { padding: 20px; }
+      table, thead, tbody, th, td, tr { display: block; }
+      thead tr { position: absolute; top: -9999px; left: -9999px; }
+      tr { margin: 20px 0; border: 3px dashed var(--pink-medium); border-radius: 15px; }
+      td { border: none; position: relative; padding-left: 50%; text-align: right; }
+      td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 15px;
+        width: 45%;
+        font-weight: bold;
+        color: var(--pink-dark);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="overlay">
+
+    <header>
+      <h1>Nhà hàng Hachi 🍓🌸</h1>
+      <p class="subtitle">Mình "nấu" tranh siêu cute cho bạn nha:3 bạn chỉ câng gọi món,bếp sẽ phục vụ, miễn trong menu là được 💕</p>
+    </header>
+
+    <div class="section">
+      <h2>Thông tin thanh toán</h2>
+      <p><strong>STK:</strong> 0941311009</p>
+      <p><strong>Ngân hàng:</strong>MB Bank </p>
+      <p><em>Cọc 30% khi duyệt sketch – chuyển full sau khi tranh xong nha~</em></p>
+    </div>
+
+    <div class="section">
+      <h2>Menu nhà hàng</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Món</th>
+            <th>Sketch</th>
+            <th>Full-color</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td data-label="Món">Head-shot</td>
+            <td data-label="Sketch">50k</td>
+            <td data-label="Full-color">70k</td>
+          </tr>
+          <tr>
+            <td data-label="Món">Bust-up</td>
+            <td data-label="Sketch">70k</td>
+            <td data-label="Full-color">90k</td>
+          </tr>
+          <tr>
+            <td data-label="Món">Fullbody</td>
+            <td data-label="Sketch">80k</td>
+            <td data-label="Full-color">120k</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>Phụ thu gia vị</h3>
+      <ul>
+        <li>Chi tiết phụ kiện (cánh,detail  mắt nhiều màu,...): +30k–60k (tùy độ cute)</li>
+        <li>Background: 20k–80k</li>
+        <li>Thêm nhân vật: +70% giá món ăn</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>Quy định nhà hàng</h2>
+      <ul>
+        <li><strong>Món mình nhận nấu:</strong> Phụ nữ, đàn ông, bé trai bé gái, nhân thú...</li>
+        <li><strong>Không nhận:</strong> furry, người già, quá nhiều detail phức tạp, NSFW.</li>
+        <li>Thời gian: 1–2 tuần (mình báo trước nếu chậm nha)</li>
+        <li><strong>Quy trình:</strong> Gửi ref → sketch → duyệt → cọc 30% → full → giao file → chuyển full.</li>
+        <li><strong>Sửa:</strong> Free 3 lần (nếu do bếp sai sót), nếu là do bạn muốn thêm chi tiết, thay đổi,... mình xin phụ thu → +10k/lần.</li>
+        <li>File: PNG/JPG mình sẽ tách nền sẵn, gửi qua Google Drive.</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>Ưu đãi siêu ngọt</h2>
+      <ul>
+        <li>Chuyển full ngay → <span class="highlight">ưu tiên slot</span> ⭐</li>
+        <li><strong>quà tặng độc quyền:</strong> Gọi món <strong>đắt nhất</strong> → <span class="highlight">70% cơ hội</span> nhận <strong>1 hạt đậu thần</strong> (quà random cute từ mình)!</li>
+      </ul>
+    </div>
+
+    <div class="contact">
+      <h2>Liên hệ mình nha~ 🍓🎨</h2>
+      <p>Facebook: https://www.facebook.com/nguoi.yeu.em.975213?locale=vi_VN</p>
+      <p>Discord: boivichicotoiyeuem</p>
+      <p>Hoặc DM / reply comment trực tiếp!</p>
+      <p style="margin-top: 30px; font-size: 1.6rem;">Cảm ơn bạn đã ghé Nhà hàng Hachi! 💕🍓</p>
+    </div>
+
+  </div>
+
+</body>
+</html>
