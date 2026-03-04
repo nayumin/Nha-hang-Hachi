@@ -81,12 +81,29 @@ h2 {
 }
 
 h2::after {
-    content: "🍓✨";
+    content: "✨";
     font-size: 1.5rem;
     position: absolute;
-    right: -45px;
+    right: -30px;
     top: 50%;
     transform: translateY(-50%);
+}
+
+/* Strawberry image icon sizes */
+.straw-icon {
+    height: 1em;
+    width: auto;
+    vertical-align: middle;
+    display: inline-block;
+    object-fit: contain;
+}
+
+.straw-icon--lg {
+    height: 1.1em;
+}
+
+.straw-icon--md {
+    height: 1em;
 }
 
 /* Layout structure */
@@ -103,14 +120,48 @@ h2::after {
 /* The Hero / Title Card spans full width */
 .header-card {
     grid-column: 1 / -1;
-    text-align: center;
-    padding: 60px 30px;
+    padding: 40px 35px;
     margin-bottom: 20px;
     background: #fff;
     border-radius: 20px 2px 20px 2px;
     /* Irregular paper look */
     transform: rotate(1deg);
     position: relative;
+}
+
+/* 2-column layout: text on left, GIF on right */
+.header-inner {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.header-text {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+    text-align: left;
+}
+
+.header-text .subtitle {
+    margin: 0;
+    transform: none;
+    text-align: left;
+    align-self: stretch;
+}
+
+.header-gif {
+    flex-shrink: 0;
+    width: 240px;
+}
+
+.mascot-gif {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 16px;
 }
 
 .subtitle {
@@ -355,11 +406,15 @@ ul li::before {
 }
 
 .sticker-1 {
-    /* Pretend strawberry */
+    /* Strawberry sticker using straw.png */
     bottom: -15px;
     right: -15px;
-    content: "🍓";
-    font-size: 3rem;
+    width: 55px;
+    height: 55px;
+    background-image: url('straw.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
     transform: rotate(15deg);
 }
 
@@ -433,44 +488,116 @@ ul li::before {
 
 /* Media queries for Responsiveness */
 @media (max-width: 768px) {
-    .header-card {
-        padding: 40px 20px;
+    body {
+        padding: 20px 12px;
     }
 
-    h1 {
-        font-size: 2.5rem;
+    /* Stack header layout vertically on mobile */
+    .header-inner {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .header-text {
+        align-items: center;
+        text-align: center;
+    }
+
+    .header-text .subtitle {
+        text-align: center;
+    }
+
+    .header-gif {
+        width: 140px;
+        order: -1;
+        /* GIF appears above text on mobile */
     }
 
     .scrapbook-board {
-        gap: 25px;
+        /* Single column on narrow screens. Avoid minmax overflow */
+        grid-template-columns: 1fr;
+        gap: 30px;
     }
 
+    /* Disable all rotations on mobile – they cause overflow */
+    .card,
+    .card:nth-child(even),
+    .card:nth-child(3n),
+    .card:nth-child(5n),
+    .header-card,
+    .contact-card,
+    .subtitle {
+        transform: none !important;
+    }
+
+    /* Shrink hover effect to avoid overflow */
+    .card:hover {
+        transform: scale(1.01) translateY(-5px) !important;
+    }
+
+    .header-card {
+        padding: 30px 16px;
+    }
+
+    h1 {
+        font-size: 2.2rem;
+    }
+
+    h2 {
+        font-size: 1.6rem;
+        /* Give room for the emoji that sits outside */
+        padding-right: 50px;
+    }
+
+    .contact-card {
+        padding: 35px 20px;
+    }
+
+    /* Menu receipt: stack prices below item name */
     .receipt-row {
-        grid-template-columns: 1fr;
-        /* Stack name on top of prices */
-        padding: 15px 0;
+        grid-template-columns: 1fr 1fr;
+        /* Item name spans full row, prices side-by-side below */
+        grid-template-rows: auto auto;
+        padding: 12px 0;
+        gap: 8px;
     }
 
     .receipt-item {
-        margin-bottom: 10px;
+        grid-column: 1 / -1;
         text-align: center;
-        width: 100%;
         border-bottom: 1px dashed var(--pink-medium);
         padding-bottom: 8px;
+        margin-bottom: 5px;
     }
 
-    /* Make prices sit side-by-side even when stacked */
-    .receipt-row>.price-col:nth-child(2) {
-        grid-row: 2;
-        grid-column: auto;
-        justify-self: end;
-        padding-right: 20px;
+    .receipt-row>.price-col {
+        justify-self: center;
     }
 
-    .receipt-row>.price-col:nth-child(3) {
-        grid-row: 2;
-        grid-column: auto;
-        justify-self: start;
-        padding-left: 20px;
+    /* Sample gallery goes single-column on very small screens */
+    .sample-gallery {
+        gap: 20px;
+    }
+
+    .photo-frame {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+}
+
+/* Very small phones */
+@media (max-width: 400px) {
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    .card {
+        padding: 25px 16px;
+    }
+
+    .btn-link {
+        padding: 12px 24px;
+        font-size: 1.1rem;
     }
 }
