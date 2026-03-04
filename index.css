@@ -1,0 +1,476 @@
+:root {
+    /* Color Palette (Scrapbook/Kawaii) */
+    --pink-base: #fff0f5;
+    /* Soft table background */
+    --pink-card: #fff9fa;
+    /* Paper color */
+    --pink-medium: #ffc1cc;
+    --pink-dark: #ff99ac;
+    --strawberry: #ff6b81;
+    --text-dark: #4a2c3d;
+    --text-light: #6b4a5a;
+
+    /* Tape colors */
+    --tape-color-1: rgba(255, 182, 193, 0.7);
+    --tape-color-2: rgba(246, 229, 141, 0.7);
+    /* Soft yellow tape */
+
+    /* Card shadows */
+    --shadow-paper: 0 4px 15px rgba(255, 105, 180, 0.15), 0 1px 3px rgba(0, 0, 0, 0.05);
+    --shadow-hover: 0 15px 35px rgba(255, 105, 180, 0.25), 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Nunito', sans-serif;
+    /* Image background */
+    background-image: url('bg.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    color: var(--text-dark);
+    line-height: 1.6;
+    min-height: 100vh;
+    overflow-x: hidden;
+    padding: 40px 20px;
+    position: relative;
+}
+
+/* Adding a pseudo-element overlay to ensure the background image doesn't clash with the scrapbook cards */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 240, 245, 0.4);
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* Headings */
+h1,
+h2,
+h3,
+.mali-font {
+    font-family: 'Mali', cursive;
+    text-wrap: balance;
+}
+
+h1 {
+    font-size: 3.5rem;
+    color: var(--strawberry);
+    text-shadow: 2px 2px 0px #fff, 4px 4px 0px var(--pink-medium);
+    line-height: 1.2;
+    margin-bottom: 10px;
+    transform: rotate(-2deg);
+}
+
+h2 {
+    color: var(--pink-dark);
+    font-size: 2rem;
+    margin-bottom: 20px;
+    display: inline-block;
+    position: relative;
+}
+
+h2::after {
+    content: "🍓✨";
+    font-size: 1.5rem;
+    position: absolute;
+    right: -45px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* Layout structure */
+.scrapbook-board {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 40px;
+    align-items: start;
+    position: relative;
+}
+
+/* The Hero / Title Card spans full width */
+.header-card {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 60px 30px;
+    margin-bottom: 20px;
+    background: #fff;
+    border-radius: 20px 2px 20px 2px;
+    /* Irregular paper look */
+    transform: rotate(1deg);
+    position: relative;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    color: var(--text-light);
+    font-weight: 700;
+    max-width: 600px;
+    margin: 0 auto;
+    background: var(--pink-card);
+    padding: 15px 25px;
+    border-radius: 30px;
+    border: 2px dashed var(--pink-medium);
+    transform: rotate(1deg);
+}
+
+/* Individual "Polaroid / Note" Cards */
+.card {
+    background: #fff;
+    padding: 35px 30px;
+    border-radius: 8px;
+    box-shadow: var(--shadow-paper);
+    position: relative;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    /* Bouncy spring */
+    will-change: transform, box-shadow;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Scatter effect: alternate rotations */
+.card:nth-child(even) {
+    transform: rotate(-2deg);
+}
+
+.card:nth-child(3n) {
+    transform: rotate(3deg);
+}
+
+.card:nth-child(5n) {
+    transform: rotate(-1deg);
+}
+
+.card:hover {
+    transform: rotate(0deg) scale(1.03) translateY(-10px);
+    box-shadow: var(--shadow-hover);
+    z-index: 10;
+}
+
+/* Tape Effects using pseudo-elements */
+.tape {
+    position: absolute;
+    width: 120px;
+    height: 35px;
+    background: var(--tape-color-1);
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%) rotate(-4deg);
+    opacity: 0.9;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(2px);
+}
+
+.tape::after,
+.tape::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: transparent;
+    border-left: 2px dotted rgba(255, 255, 255, 0.5);
+}
+
+.tape::before {
+    left: 2px;
+}
+
+.tape::after {
+    right: 2px;
+}
+
+.card:nth-child(odd) .tape {
+    background: var(--tape-color-2);
+    transform: translateX(-50%) rotate(3deg);
+    width: 100px;
+    top: -10px;
+    left: 40%;
+}
+
+/* Menu specific styling (Receipt look) */
+.menu-receipt {
+    background-color: #fffdfc;
+    border: 1px solid #ffe4e8;
+    background-image: linear-gradient(#ffe4e8 1px, transparent 1px);
+    background-size: 100% 32px;
+    line-height: 32px;
+    padding: 40px 30px 20px;
+    box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.05);
+    border-radius: 4px;
+    /* Zig-zag bottom edge via clip-path or background trick */
+}
+
+.table-container {
+    margin-top: 15px;
+    margin-bottom: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.receipt-row {
+    display: grid;
+    grid-template-columns: 1fr 80px 80px;
+    /* Name | Sketch Price | Full-color Price */
+    align-items: center;
+    gap: 10px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    padding: 5px 0;
+    position: relative;
+}
+
+.receipt-row:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    border-bottom: 2px dotted #ffd1dc;
+}
+
+.receipt-item {
+    font-size: 1.2rem;
+}
+
+.price-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    line-height: 1.2;
+    background: #fffdfc;
+    padding: 2px 5px;
+    border-radius: 8px;
+    color: var(--strawberry);
+}
+
+.price-label {
+    font-size: 0.75rem;
+    color: var(--pink-dark);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Sample Gallery (Polaroid Photos) */
+.sample-gallery {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.photo-frame {
+    background: white;
+    padding: 12px 12px 35px 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 2px;
+    flex: 1 1 250px;
+    max-width: 400px;
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+}
+
+.photo-frame::after {
+    /* Subtle glossy overlay */
+    content: '';
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    right: 12px;
+    bottom: 35px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0) 40%);
+    pointer-events: none;
+}
+
+.photo-frame img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 2px;
+    display: block;
+    background-color: var(--pink-soft);
+    /* Placeholder color while loading */
+}
+
+.photo-frame:hover {
+    transform: rotate(0deg) scale(1.05) !important;
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+    z-index: 15;
+}
+
+/* Lists styling */
+ul {
+    list-style: none;
+}
+
+ul li {
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 12px;
+    font-weight: 600;
+}
+
+ul li::before {
+    content: "🌸";
+    position: absolute;
+    left: 0;
+    top: 2px;
+    font-size: 1.1rem;
+}
+
+.highlight {
+    background: linear-gradient(104deg, rgba(255, 107, 129, 0) 0.9%, rgba(255, 107, 129, 0.25) 2.4%, rgba(255, 107, 129, 0.15) 5.8%, rgba(255, 107, 129, 0) 93%, rgba(255, 107, 129, 0.15) 96%, rgba(255, 107, 129, 0) 98%);
+    padding: 0 4px;
+    border-radius: 3px;
+    font-weight: 800;
+    color: var(--strawberry);
+}
+
+/* Sticker visuals added via CSS */
+.sticker {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.1));
+    z-index: 20;
+}
+
+.sticker-1 {
+    /* Pretend strawberry */
+    bottom: -15px;
+    right: -15px;
+    content: "🍓";
+    font-size: 3rem;
+    transform: rotate(15deg);
+}
+
+.sticker-2 {
+    /* Star */
+    top: -20px;
+    left: 20px;
+    content: "⭐";
+    font-size: 2.5rem;
+    transform: rotate(-10deg);
+}
+
+/* Contact Card */
+.contact-card {
+    grid-column: 1 / -1;
+    background: var(--strawberry);
+    color: white;
+    text-align: center;
+    padding: 50px;
+    border-radius: 30px;
+    transform: rotate(-1deg);
+    box-shadow: 0 10px 30px rgba(255, 107, 129, 0.4);
+    margin-top: 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.contact-card h2 {
+    color: white;
+    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.1);
+}
+
+.contact-card h2::after {
+    display: none;
+}
+
+.btn-link {
+    display: inline-block;
+    background: white;
+    color: var(--strawberry);
+    font-weight: 800;
+    font-family: 'Mali', cursive;
+    text-decoration: none;
+    padding: 15px 35px;
+    border-radius: 50px;
+    font-size: 1.3rem;
+    margin: 20px 0;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    outline: none;
+}
+
+.btn-link:focus-visible {
+    box-shadow: 0 0 0 4px var(--pink-light), 0 0 0 8px var(--pink-dark);
+    transform: translateY(-5px) scale(1.05);
+}
+
+.btn-link:hover,
+.btn-link:active {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+}
+
+.discord-text {
+    font-family: monospace;
+    background: rgba(0, 0, 0, 0.15);
+    padding: 6px 15px;
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+/* Media queries for Responsiveness */
+@media (max-width: 768px) {
+    .header-card {
+        padding: 40px 20px;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    .scrapbook-board {
+        gap: 25px;
+    }
+
+    .receipt-row {
+        grid-template-columns: 1fr;
+        /* Stack name on top of prices */
+        padding: 15px 0;
+    }
+
+    .receipt-item {
+        margin-bottom: 10px;
+        text-align: center;
+        width: 100%;
+        border-bottom: 1px dashed var(--pink-medium);
+        padding-bottom: 8px;
+    }
+
+    /* Make prices sit side-by-side even when stacked */
+    .receipt-row>.price-col:nth-child(2) {
+        grid-row: 2;
+        grid-column: auto;
+        justify-self: end;
+        padding-right: 20px;
+    }
+
+    .receipt-row>.price-col:nth-child(3) {
+        grid-row: 2;
+        grid-column: auto;
+        justify-self: start;
+        padding-left: 20px;
+    }
+}

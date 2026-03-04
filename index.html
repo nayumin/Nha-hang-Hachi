@@ -1,267 +1,176 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Nhà hàng Hachi 🍓🌸 | Commission Art</title>
-  <style>
-    :root {
-      --pink-soft: #ffebee;
-      --pink-light: #fff0f5;
-      --pink-medium: #ffc1cc;
-      --pink-dark: #ff99ac;
-      --strawberry: #ff6b81;
-      --text-dark: #4a2c3d;
-      --text-light: #6b4a5a;
-    }
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+  <!-- Add whimsical fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mali:wght@400;600;700&family=Nunito:wght@400;700;800&display=swap"
+    rel="stylesheet">
 
-    body {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-      background: var(--pink-light) url('https://www.fabmood.com/wp-content/uploads/2026/03/Cute-Pink-Strawberry-Desktop-Wallpaper-Kawaii-Aesthetic-Laptop-Background.jpg') repeat;
-      background-size: 300px 300px; /* seamless polka/strawberry pattern */
-      color: var(--text-dark);
-      line-height: 1.6;
-      min-height: 100vh;
-      padding: 20px;
-    }
-
-    .overlay {
-      background: rgba(255, 240, 245, 0.75); /* hồng nhạt overlay để chữ dễ đọc */
-      min-height: 100vh;
-      border-radius: 20px;
-      max-width: 920px;
-      margin: 0 auto;
-      padding: 30px;
-      box-shadow: 0 10px 40px rgba(255, 105, 180, 0.25);
-    }
-
-    header {
-      text-align: center;
-      padding: 50px 20px 30px;
-      background: linear-gradient(to bottom, rgba(255,182,193,0.4), rgba(255,240,245,0.6));
-      border-radius: 30px;
-      margin-bottom: 40px;
-    }
-
-    h1 {
-      font-size: 3.5rem;
-      color: var(--pink-dark);
-      text-shadow: 3px 3px 6px rgba(255,105,180,0.4);
-      margin-bottom: 15px;
-      font-weight: 800;
-    }
-
-    .subtitle {
-      font-size: 1.4rem;
-      color: var(--strawberry);
-      margin-bottom: 20px;
-    }
-
-    h2 {
-      color: var(--pink-dark);
-      font-size: 2.3rem;
-      margin: 50px 0 25px;
-      text-align: center;
-      position: relative;
-    }
-
-    h2::after {
-      content: "🍓✨";
-      font-size: 1.5rem;
-      margin-left: 10px;
-    }
-
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin: 30px 0;
-      background: rgba(255,255,255,0.85);
-      border-radius: 20px;
-      overflow: hidden;
-      box-shadow: 0 8px 25px rgba(255,105,180,0.2);
-    }
-
-    th, td {
-      padding: 18px 15px;
-      text-align: center;
-      border-bottom: 1px solid #ffd1dc;
-    }
-
-    th {
-      background: var(--pink-medium);
-      color: white;
-      font-weight: bold;
-    }
-
-    tr:nth-child(even) {
-      background: rgba(255,240,245,0.6);
-    }
-
-    .section {
-      background: rgba(255,255,255,0.9);
-      padding: 35px;
-      border-radius: 25px;
-      margin-bottom: 40px;
-      box-shadow: 0 10px 30px rgba(255,105,180,0.15);
-      border: 2px dashed var(--pink-medium);
-    }
-
-    ul {
-      list-style: none;
-      padding-left: 0;
-    }
-
-    ul li {
-      margin: 15px 0;
-      padding-left: 35px;
-      position: relative;
-      font-size: 1.1rem;
-    }
-
-    ul li::before {
-      content: "🍓";
-      position: absolute;
-      left: 0;
-      font-size: 1.4rem;
-    }
-
-    .highlight {
-      color: var(--strawberry);
-      font-weight: bold;
-      background: rgba(255,182,193,0.3);
-      padding: 3px 8px;
-      border-radius: 8px;
-    }
-
-    .contact {
-      text-align: center;
-      background: var(--pink-medium);
-      color: white;
-      padding: 50px 30px;
-      border-radius: 30px;
-      margin-top: 60px;
-      font-size: 1.5rem;
-      box-shadow: 0 15px 40px rgba(255,105,180,0.3);
-    }
-
-    a {
-      color: white;
-      font-weight: bold;
-      text-decoration: underline;
-    }
-
-    a:hover {
-      color: #fff;
-      opacity: 0.9;
-    }
-
-    @media (max-width: 600px) {
-      h1 { font-size: 2.8rem; }
-      h2 { font-size: 1.9rem; }
-      .overlay { padding: 20px; }
-      table, thead, tbody, th, td, tr { display: block; }
-      thead tr { position: absolute; top: -9999px; left: -9999px; }
-      tr { margin: 20px 0; border: 3px dashed var(--pink-medium); border-radius: 15px; }
-      td { border: none; position: relative; padding-left: 50%; text-align: right; }
-      td::before {
-        content: attr(data-label);
-        position: absolute;
-        left: 15px;
-        width: 45%;
-        font-weight: bold;
-        color: var(--pink-dark);
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="index.css">
 </head>
+
 <body>
 
-  <div class="overlay">
+  <div class="scrapbook-board">
 
-    <header>
+    <!-- Hero / Header Note -->
+    <header class="header-card">
+      <div class="tape" style="top: -15px; width: 150px; left: 50%; transform: translateX(-50%) rotate(1deg);"></div>
       <h1>Nhà hàng Hachi 🍓🌸</h1>
-      <p class="subtitle">Mình "nấu" tranh siêu cute cho bạn nha:3 bạn chỉ câng gọi món,bếp sẽ phục vụ, miễn trong menu là được 💕</p>
+      <p class="subtitle mali-font">
+        Mình “nấu” tranh siêu cute cho bạn nha :3<br>
+        Bạn chỉ cần gọi món, bếp sẽ phục vụ, miễn trong menu là được 💕
+      </p>
     </header>
 
-    <div class="section">
-      <h2>Thông tin thanh toán</h2>
-      <p><strong>STK:</strong> 0941311009</p>
-      <p><strong>Ngân hàng:</strong>MB Bank </p>
-      <p><em>Cọc 30% khi duyệt sketch – chuyển full sau khi tranh xong nha~</em></p>
-    </div>
+    <!-- Payment Info Polaroid -->
+    <article class="card">
+      <div class="tape"></div>
+      <h2>Thanh toán</h2>
+      <div style="font-size: 1.1rem; line-height: 1.8;">
+        <p><strong>🏦 Ngân hàng:</strong> MB Bank</p>
+        <p><strong>💳 STK:</strong> <span class="highlight"
+            style="font-family: monospace; font-size: 1.2rem;">0941311009</span></p>
+        <div
+          style="margin-top: 20px; padding: 15px; background: var(--pink-soft); border-radius: 12px; border: 2px dashed var(--pink-medium);">
+          <em>Cọc 30% khi duyệt sketch – chuyển full sau khi tranh xong nha~ 🌸</em>
+        </div>
+      </div>
+      <div class="sticker sticker-2"></div>
+    </article>
 
-    <div class="section">
-      <h2>Menu nhà hàng</h2>
-      <table>
-        <thead>
-          <tr>
-            <th>Món</th>
-            <th>Sketch</th>
-            <th>Full-color</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td data-label="Món">Head-shot</td>
-            <td data-label="Sketch">50k</td>
-            <td data-label="Full-color">70k</td>
-          </tr>
-          <tr>
-            <td data-label="Món">Bust-up</td>
-            <td data-label="Sketch">70k</td>
-            <td data-label="Full-color">90k</td>
-          </tr>
-          <tr>
-            <td data-label="Món">Fullbody</td>
-            <td data-label="Sketch">80k</td>
-            <td data-label="Full-color">120k</td>
-          </tr>
-        </tbody>
-      </table>
+    <!-- Menu Receipt -->
+    <article class="card menu-receipt">
+      <div class="tape"></div>
+      <h2 style="margin-top: -10px;">Menu Nhà Hàng</h2>
 
-      <h3>Phụ thu gia vị</h3>
-      <ul>
-        <li>Chi tiết phụ kiện (cánh,detail  mắt nhiều màu,...): +30k–60k (tùy độ cute)</li>
-        <li>Background: 20k–80k</li>
-        <li>Thêm nhân vật: +70% giá món ăn</li>
+      <div class="table-container">
+        <!-- Receipt Rows (Grid Format) -->
+        <div class="receipt-row">
+          <div class="receipt-item">Head-shot</div>
+          <div class="price-col"><span class="price-label">Sketch</span>50k</div>
+          <div class="price-col"><span class="price-label">Full-color</span>70k</div>
+        </div>
+
+        <div class="receipt-row">
+          <div class="receipt-item">Bust-up</div>
+          <div class="price-col"><span class="price-label"></span>70k</div>
+          <div class="price-col"><span class="price-label"></span>90k</div>
+        </div>
+
+        <div class="receipt-row">
+          <div class="receipt-item">Fullbody</div>
+          <div class="price-col"><span class="price-label"></span>80k</div>
+          <div class="price-col"><span class="price-label"></span>120k</div>
+        </div>
+      </div>
+
+      <h3 class="mali-font" style="color: var(--pink-dark); margin-top: 15px; font-size: 1.3rem;">🧂 Phụ thu gia vị</h3>
+      <ul style="font-size: 0.95rem; line-height: 1.5; margin-top: 10px;">
+        <li>Chi tiết phụ kiện (cánh, mắt nhiều màu...): <span class="highlight">+30k–60k</span></li>
+        <li>Background: <span class="highlight">20k–80k</span></li>
+        <li>Thêm nhân vật: <span class="highlight">+70%</span> giá món</li>
       </ul>
-    </div>
+    </article>
 
-    <div class="section">
-      <h2>Quy định nhà hàng</h2>
+    <!-- Promos Card -->
+    <article class="card" style="background: #fffcf7;">
+      <div class="tape"></div>
+      <h2>Ưu đãi ngọt ngào</h2>
+      <div style="display: flex; flex-direction: column; gap: 20px;">
+        <div
+          style="padding: 15px; border: 2px solid var(--pink-medium); border-radius: 12px; transform: rotate(-1deg); background: white;">
+          <span style="font-size: 1.5rem; display: block; margin-bottom: 5px;">⭐</span>
+          Chuyển full ngay → <span class="highlight">ưu tiên slot</span>
+        </div>
+
+        <div
+          style="padding: 15px; border: 2px solid var(--pink-medium); border-radius: 12px; transform: rotate(1deg); background: white;">
+          <span style="font-size: 1.5rem; display: block; margin-bottom: 5px;">🎁</span>
+          Gọi món đắt nhất → <span class="highlight">70% cơ hội</span> nhận 1 hạt đậu thần (Quà random cute)
+        </div>
+      </div>
+      <div class="sticker sticker-1"></div>
+    </article>
+
+    <!-- Rules Card -->
+    <article class="card">
+      <div class="tape"></div>
+      <h2>Quy định bếp</h2>
       <ul>
-        <li><strong>Món mình nhận nấu:</strong> Phụ nữ, đàn ông, bé trai bé gái, nhân thú...</li>
-        <li><strong>Không nhận:</strong> furry, người già, quá nhiều detail phức tạp, NSFW.</li>
-        <li>Thời gian: 1–2 tuần (mình báo trước nếu chậm nha)</li>
+        <li><strong>Nhận nấu:</strong> Phụ nữ, đàn ông, bé trai bé gái, nhân thú...</li>
+        <li><strong>Không nhận:</strong> furry, người già, detail phức tạp, NSFW.</li>
+        <li><strong>Thời gian:</strong> 1–2 tuần <span style="font-size: 0.9em; color: var(--text-light);">(mình báo
+            trước nếu chậm)</span></li>
         <li><strong>Quy trình:</strong> Gửi ref → sketch → duyệt → cọc 30% → full → giao file → chuyển full.</li>
-        <li><strong>Sửa:</strong> Free 3 lần (nếu do bếp sai sót), nếu là do bạn muốn thêm chi tiết, thay đổi,... mình xin phụ thu → +10k/lần.</li>
-        <li>File: PNG/JPG mình sẽ tách nền sẵn, gửi qua Google Drive.</li>
+        <li><strong>Sửa đổi:</strong> Free 3 lần (nếu bếp nhầm). Thêm chi tiết mới: <span
+            class="highlight">+10k/lần</span>.</li>
+        <li><strong>File:</strong> PNG/JPG (tách nền sẵn) qua Google Drive.</li>
       </ul>
-    </div>
+    </article>
+    <!-- Sample Art Polaroid Section -->
+    <article class="card" style="grid-column: 1 / -1;">
+      <div class="tape"
+        style="background: var(--tape-color-2); width: 140px; transform: translateX(-50%) rotate(2deg);"></div>
+      <h2>Tranh mẫu 🎨</h2>
+      <p style="margin-top: -10px; margin-bottom: 20px; color: var(--text-light); font-weight: 600;">Một vài món mà bếp
+        đã phục vụ nha~</p>
 
-    <div class="section">
-      <h2>Ưu đãi siêu ngọt</h2>
-      <ul>
-        <li>Chuyển full ngay → <span class="highlight">ưu tiên slot</span> ⭐</li>
-        <li><strong>quà tặng độc quyền:</strong> Gọi món <strong>đắt nhất</strong> → <span class="highlight">70% cơ hội</span> nhận <strong>1 hạt đậu thần</strong> (quà random cute từ mình)!</li>
-      </ul>
-    </div>
+      <div class="sample-gallery">
+        <div class="photo-frame" style="transform: rotate(-3deg);">
+          <img src="sample1.jpg" alt="Tranh mẫu 1" loading="lazy">
+        </div>
+        <div class="photo-frame" style="transform: rotate(4deg);">
+          <img src="sample2.jpg" alt="Tranh mẫu 2" loading="lazy">
+        </div>
+        <div class="photo-frame" style="transform: rotate(-3deg);">
+          <img src="sample3.jpg" alt="Tranh mẫu 2" loading="lazy">
+        </div>
+        <div class="photo-frame" style="transform: rotate(4deg);">
+          <img src="sample4.jpg" alt="Tranh mẫu 2" loading="lazy">
+        </div>
+        <div class="photo-frame" style="transform: rotate(-3deg);">
+          <img src="sample5.jpg" alt="Tranh mẫu 2" loading="lazy">
+        </div>
+      </div>
+    </article>
 
-    <div class="contact">
-      <h2>Liên hệ mình nha~ 🍓🎨</h2>
-      <p>Facebook: https://www.facebook.com/nguoi.yeu.em.975213?locale=vi_VN</p>
-      <p>Discord: boivichicotoiyeuem</p>
-      <p>Hoặc DM / reply comment trực tiếp!</p>
-      <p style="margin-top: 30px; font-size: 1.6rem;">Cảm ơn bạn đã ghé Nhà hàng Hachi! 💕🍓</p>
-    </div>
+    <!-- Footer Contact -->
+    <footer class="contact-card">
+      <div class="tape"
+        style="top: -15px; left: 50%; transform: translateX(-50%) rotate(2deg); background: var(--tape-color-2);"></div>
+      <h2 class="mali-font" style="font-size: 2.5rem; margin-bottom: 10px;">Liên hệ mình nha~ 🍓🎨</h2>
+
+      <p class="mali-font" style="font-size: 1.3rem; opacity: 0.9; margin-bottom: 20px;">Hoặc DM / reply comment trực
+        tiếp!</p>
+
+      <a href="https://www.facebook.com/nguoi.yeu.em.975213?locale=vi_VN" class="btn-link">Nhắn tin Facebook 💌</a>
+
+      <p style="margin-top: 15px; font-size: 1.1rem;">
+        Discord: <span class="discord-text">boivichicotoiyeuem</span>
+      </p>
+
+      <p class="mali-font"
+        style="margin-top: 40px; font-size: 1.5rem; font-weight: bold; text-shadow: 1px 1px 0 rgba(0,0,0,0.1);">
+        Cảm ơn bạn đã ghé Nhà hàng Hachi! 💕🍓
+      </p>
+
+      <!-- Decorative background elements inside footer -->
+      <div style="position: absolute; top: 10%; right: 5%; font-size: 4rem; opacity: 0.2; transform: rotate(20deg);">🌸
+      </div>
+      <div style="position: absolute; bottom: 10%; left: 5%; font-size: 4rem; opacity: 0.2; transform: rotate(-15deg);">
+        🍰</div>
+    </footer>
 
   </div>
 
 </body>
+
 </html>
