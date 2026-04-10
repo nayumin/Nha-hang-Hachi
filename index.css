@@ -26,6 +26,10 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: 'Nunito', sans-serif;
     /* Image background */
@@ -366,6 +370,66 @@ h2::after {
     z-index: 15;
 }
 
+/* Category Navigation */
+.category-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.category-btn {
+    display: inline-block;
+    padding: 10px 22px;
+    background: var(--pink-card);
+    color: var(--strawberry);
+    font-family: 'Mali', cursive;
+    font-weight: 700;
+    font-size: 0.95rem;
+    text-decoration: none;
+    border: 2px solid var(--pink-medium);
+    border-radius: 50px;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    cursor: pointer;
+}
+
+.category-btn:hover,
+.category-btn:focus-visible {
+    background: var(--strawberry);
+    color: white;
+    border-color: var(--strawberry);
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 6px 18px rgba(255, 107, 129, 0.35);
+}
+
+.category-btn:active {
+    transform: translateY(-1px) scale(1.02);
+}
+
+/* Category Sections */
+.sample-category {
+    margin-bottom: 35px;
+    scroll-margin-top: 30px;
+}
+
+.sample-category:last-child {
+    margin-bottom: 0;
+}
+
+.category-title {
+    color: var(--pink-dark);
+    font-size: 1.4rem;
+    margin-bottom: 18px;
+    padding-bottom: 10px;
+    border-bottom: 2px dashed var(--pink-medium);
+    display: inline-block;
+}
+
+.category-title::after {
+    display: none;
+}
+
 /* Lists styling */
 ul {
     list-style: none;
@@ -583,6 +647,19 @@ ul li::before {
     .photo-frame {
         flex: 1 1 100%;
         max-width: 100%;
+    }
+
+    .category-nav {
+        gap: 8px;
+    }
+
+    .category-btn {
+        padding: 8px 16px;
+        font-size: 0.85rem;
+    }
+
+    .category-title {
+        font-size: 1.2rem;
     }
 }
 
